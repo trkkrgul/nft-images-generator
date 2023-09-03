@@ -30,23 +30,23 @@ app.get("/vault/ticket/:epoch/:timestamp/:id", async (req, res) => {
     const embeddedText = `EPOCH: ${epoch}`;
 
     // Set font properties
-    ctx.font = "medium 30px montserrat";
+    ctx.font = "black 12px montserrat";
 
     ctx.fillStyle = "black";
 
     // Position to embed text (adjust as needed)
-    const x = 120;
-    const y = canvas.height - 50;
+    const x = 50;
+    const y = canvas.height - 20;
 
     // Draw the embedded text
     ctx.fillText(embeddedText, x, y);
-    ctx.fillText(`ID:${id}`, x + 600, y);
+    ctx.fillText(`ID:${id}`, canvas.width / 2, y);
     ctx.fillText(
       `Raffle Time: ${new Date(
         parseInt(timestamp) * 1000
       ).toLocaleDateString()}`,
-      canvas.width - 400,
-      100
+      canvas.width - 155,
+      40
     );
 
     // Convert canvas to buffer
